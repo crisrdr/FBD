@@ -1,0 +1,26 @@
+CC = gcc -g
+CFLAGS = -Wall -Wextra -pedantic -ansi
+
+HEADERS = utils.h
+
+EXE = menu
+OBJ = $(EXE).o utils.o checkUtils.o checkCreateTable.o checkReplaceExtensionByIdx.o \
+checkCreateIndex.o checkPrint.o checkFindKey.o checkAddIndexEntry.o
+
+
+%.o: %.c $(HEADERS)
+	@echo Compiling $<...
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+
+menu: $(OBJ) $(HEADERS)
+	$(CC) $(CFLAGS) -o $(EXE) $(OBJ)
+
+run:
+	./menu
+
+clean:
+	rm -f *.o core $(EXE) *.txt *.dat *.idx
+
+clear:
+	rm *.dat *.idx file.txt
