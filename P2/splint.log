@@ -1,0 +1,36 @@
+customers.c: (in function CustomersFind)
+customers.c:126:38: Passed storage cna not completely defined (*cna is
+                       undefined): printf (..., cna, ...)
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+customers.c:126:43: Passed storage cfn not completely defined (*cfn is
+                       undefined): printf (..., cfn)
+customers.c:126:48: Passed storage cln not completely defined (*cln is
+                       undefined): printf (..., cln, ...)
+customers.c: (in function CustomersListP)
+customers.c:193:34: Passed storage &cu not completely defined:
+                       SQLBindCol (..., &cu, ...)
+customers.c:195:30: Passed storage pc not completely defined (*pc is
+                       undefined): printf (..., pc, ...)
+customers.c:195:34: Passed storage pn not completely defined (*pn is
+                       undefined): printf (..., pn)
+orders.c: (in function OrdersRange)
+orders.c:184:43: Passed storage orderDate not completely defined (*orderDate is
+                    undefined): printf (..., orderDate)
+orders.c:184:54: Passed storage shippedDate not completely defined
+                    (*shippedDate is undefined): printf (..., shippedDate, ...)
+orders.c: (in function OrdersDetail)
+orders.c:242:35: Passed storage &totalCost not completely defined:
+                    SQLBindCol (..., &totalCost, ...)
+orders.c:245:73: Passed storage orderDate not completely defined (*orderDate is
+                    undefined): printf (..., orderDate, ...)
+orders.c:245:84: Passed storage status not completely defined (*status is
+                    undefined): printf (..., status)
+orders.c:278:35: Passed storage &quatityOrdered not completely defined:
+                    SQLBindCol (..., &quatityOrdered, ...)
+orders.c:279:35: Passed storage &priceEach not completely defined:
+                    SQLBindCol (..., &priceEach, ...)
+orders.c:282:33: Passed storage productCode not completely defined
+                    (*productCode is undefined): printf (..., productCode, ...)
+
